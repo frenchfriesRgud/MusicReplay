@@ -1,0 +1,22 @@
+{
+  "short_name": "Replay Story",
+  "name": "Replay Story",
+  "description": "Create Music Replay Stories",
+  "icons": [
+    {
+      "src": "assets/brand/app/ios_icon_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/brand/app/ios_icon_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "scope":"/",
+  "background_color": "#000",
+  "display": "fullscreen",
+  "theme_color": "#000"
+}
