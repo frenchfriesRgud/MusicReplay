@@ -60,6 +60,7 @@
 	<link rel="manifest" href="/manifest.json">
 	<!-- END Progressive Web Application Meta -->
 	<!-- Anthonys Includes -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://anthony.media/favicon.ico">
 	<link href="https://anthony.media/css/global/animate.css" type="text/css" media="all" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
@@ -71,7 +72,7 @@
 	<link rel="stylesheet" href="./assets/css/musicreplay.css">
 </head>
 
-<body>
+<body class="animate__animated animate__fadeIn">
 	<div class="generate">
 		<div class="title">
 			Music Replay Stories
@@ -90,7 +91,7 @@
             <div class="step">
                 <label>Step 1</label>
                 <p>Visit Apple Music on desktop to get your data.</p>
-                <a target="_blank" href="https://replay.music.apple.com/" class="tutorial-link">https://replay.music.apple.com</a>                
+                <a target="_blank" class="tutorial-link">https://replay.music.apple.com</a>                
             </div>
             <div class="step">
                 <label>Step 2</label>
@@ -112,50 +113,54 @@
             </div>
             <div class="form-duration">
                 <label for="duration">Hours listened</label>
-                <input type="text" name="duration" placeholder="Tap here to enter hours" value="326">
+                <input pattern="[0-9]*" type="number" min="1" step="any" name="duration" placeholder="Tap here to enter hours" required value="">
                 <label for="duration">Favorite genre</label>
-                <input type="text" name="genre" placeholder="Tap here to enter genre" value="Chillwave">
+                <input type="text" name="genre" placeholder="Tap here to enter genre" required value="">
             </div>
             <ol id="artists" class="artists">
                 <label>Your top five artists were</label>
                 <li>
                     <div class="top-artist">
-                        <input name="artists" type="text" placeholder="Tap here to enter an artist" required value="Vampire Weekend">
+                        <input name="artists" type="text" placeholder="Tap here to enter an artist" required value="">
                         <label for="artwork">A direct URL to artwork or photo</label>
-                        <input name="artwork" type="url" placeholder="Tap here to enter a URL" required value="https://media.pitchfork.com/photos/5929b41e13d197565213aa5f/1:1/w_320/8212e6dc.jpeg">
+                        <input id="artwork-url" name="artwork" type="url" placeholder="Tap here to enter a URL" required value="">
+                        <div class="url-preview animate__animated animate__fadeIn hide">
+                            <label>Image Preview:</label>
+                            <div class="preview"></div>
+                        </div>
                     </div>
                 </li>
                 <li>
-                    <input type="text" name="artists" placeholder="Tap here to enter an artist" required value="Tame Impala">
+                    <input type="text" name="artists" placeholder="Tap here to enter an artist" required value="">
                 </li>
                 <li>
-                    <input type="text" name="artists" placeholder="Tap here to enter an artist" required value="Metronomy">
+                    <input type="text" name="artists" placeholder="Tap here to enter an artist" required value="">
                 </li>
                 <li>
-                    <input type="text" name="artists" placeholder="Tap here to enter an artist" required value="New Order">
+                    <input type="text" name="artists" placeholder="Tap here to enter an artist" required value="">
                 </li>
                 <li>
-                    <input type="text" name="artists" placeholder="Tap here to enter an artist" required value="Toro y Moi">
+                    <input type="text" name="artists" placeholder="Tap here to enter an artist" required value="">
                 </li>
             </ol>
             <ol id="songs" class="songs">
                 <label>Your top five songs were</label>
                 <li>
                     <div class="top-song">
-                        <input name="songs" type="text" placeholder="Tap here to enter a song" required value="Diplomat's Son">
+                        <input name="songs" type="text" placeholder="Tap here to enter a song" required value="">
                     </div>
                 </li>
                 <li>
-                    <input type="text" name="songs" placeholder="Tap here to enter a song" required value="The Look">
+                    <input type="text" name="songs" placeholder="Tap here to enter a song" required value="">
                 </li>
                 <li>
-                    <input type="text" name="songs" placeholder="Tap here to enter a song" required value="Ya Hey">
+                    <input type="text" name="songs" placeholder="Tap here to enter a song" required value="">
                 </li>
                 <li>
-                    <input type="text" name="songs" placeholder="Tap here to enter a song" required value="She Works Out Too Much">
+                    <input type="text" name="songs" placeholder="Tap here to enter a song" required value="">
                 </li>
                 <li>
-                    <input type="text" name="songs" placeholder="Tap here to enter a song" required value="Walcott">
+                    <input type="text" name="songs" placeholder="Tap here to enter a song" required value="">
                 </li>
             </ol>
             <button type="submit">Generate</button>
@@ -165,7 +170,7 @@
         <div class="wrap">
             <div class="artwork">
                 <div class="shadow"></div>
-                <img class="poster" src="https://upload.wikimedia.org/wikipedia/en/9/9b/Tame_Impala_-_Currents.png" alt="Featured artist">
+                <div class="poster" alt="Featured artist"></div>
                 <div class="shadow"></div>
             </div>
             <div class="billboard">
