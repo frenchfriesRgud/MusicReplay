@@ -3,6 +3,20 @@
 // 2020-12-03
 // https://musicreplay.frenchfriesrgud.repl.co/?duration=777&genre=rocknroll&artwork=afasfdasfd&a1=z&a2=z&a3=z&a4=z&a5=z&s1=x&s2=x&s3=x&s4=x&s5=x#share
 console.log('/js/musicreplay.js connected');
+function fixedEncodeURIComponent(str) {
+  return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {
+    return '%' + c.charCodeAt(0).toString(16);
+  });
+}
+
+// TODO: Build URL Strings to enable sharing 
+
+// let testString = 'testing.com/adfsfhttps:/`/(#@!%^&^^^^&*((=---)))()())))(((()))))www.imgur.com?==asdfas'
+// let test = fixedEncodeURIComponent(testString);
+// console.log(testString)
+// console.log(test);
+// console.log(decodeURIComponent(test))
+
 const app = {
 	vendor: 'apple',
 	state: '',
@@ -136,7 +150,6 @@ if (window.location.hash === '#share') {
 }
 
 // Event Listeners
-
 tutorial.dismissBtn.addEventListener('click', () => {
 	tutorial.hide();
 	form.show();
